@@ -191,6 +191,10 @@ body {
 .app-card h2 {
   font-family: 'tajawal', sans-serif;
   background-color: var(--app-bgC);
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -285,10 +289,12 @@ body {
 .app-footer-container ol li , .app-footer-container li {
   list-style-type: none;
   padding:10px;
+  font-size:14px;
 }
 .app-footer-container ol li a, .app-footer-container li a {
   text-decoration: none;
   color:var(--app-clA);
+  font-size:14px;
 }
 .app-footer-container ol li a:hover, .app-footer-container li a:hover {
   font-weight: 700;
