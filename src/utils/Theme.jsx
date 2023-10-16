@@ -1,9 +1,16 @@
-export function Theme(bgA, bgC , clA) {
+export function Theme(bgA='#fff', bgC='#f1f1f1' , clA='rgba(0,0,0,0.8)') {
     const scheme =  JSON.parse(localStorage.getItem('theme'))
     const root  = document.documentElement
-    root.style.setProperty('--app-bgA', scheme.bgA)
-    root.style.setProperty('--app-bgC', scheme.bgC)
-    root.style.setProperty('--app-clA', scheme.clA)   
+    if (scheme)  {
+    root.style.setProperty('--app-bgA', scheme.bgA )
+    root.style.setProperty('--app-bgC', scheme.bgC )
+    root.style.setProperty('--app-clA', scheme.clA ) 
+    } 
+    else {
+    root.style.setProperty('--app-bgA', bgA )
+    root.style.setProperty('--app-bgC', bgC )
+    root.style.setProperty('--app-clA', clA )   
+    }
 }
 
 function AppStorage(theme, bgA, bgC , clA) {
@@ -17,7 +24,11 @@ function AppStorage(theme, bgA, bgC , clA) {
 }
 
 export function CheckTheme() {
-    return JSON.parse(localStorage.getItem('theme')).theme
+   const theme = JSON.parse(localStorage.getItem('theme'))
+   if(theme !== null) {
+    return theme.theme
+    }
+   else false
 }
 
 export function DarkTheme() { 
